@@ -31,10 +31,15 @@ Phase 4 — Generalized structured-evaluation-engine abstraction
 ## Current Architecture
 
 core/ -> Evaluation logic and scoring specifications
+
 prompts/ -> LLM interaction layer
+
 config/ -> Weight configuration
+
 inputs/ -> Structured templates
+
 examples/ -> Reference usage
+
 src/ -> Reserved for CLI and API implementation
 
 ---
