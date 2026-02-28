@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/evaluation-output.schema.json",
+  "title": "Job Evaluation Output Schema",
+  "description": "Defines the required structured output of the Job Evaluation Engine.",
+  "type": "object",
+  "required": [
+    "job",
+    "candidate",
+    "scores",
+    "confidence",
+    "evidence",
+    "summary",
+    "metadata"
+  ],
+  "properties": {
+    "job": {
+      "type": "object",
+      "required": ["title", "company"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "company": {
+          "type": "string",
+          "minLength": 1
+        },
+        "location": {
+          "type": ["string", "null"]
+        },
+        "source": {
+          "type": ["string", "null"],
+          "description": "URL or recruiter source"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "candidate": {
+      "type": "object",
+      "required": ["profile_id"],
+      "properties": {
+        "profile_id": {
+          "type": "string",
+          "description": "Identifier for candidate profile used"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "scores": {
+      "type": "object",
+      "required": [
+        "scope_clarity",
+        "psychological_load_risk",
+        "technical_match",
+        "operational_structure"
+      ],
+      "properties": {
+        "scope_clarity": {
+          "$ref": "#/$defs/scoreValue"
+        },
+
+        "psychological_load_risk": {
+          "$ref": "#/$defs/scoreValue"
+        },
+
+        "technical_match": {
+          "$ref": "#/$defs/scoreValue"
+        },
+
+        "operational_structure": {
+          "$ref": "#/$defs/scoreValue"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "confidence": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH"]
+    },
+
+    "evidence": {
+      "type": "object",
+      "required": [
+        "scope_clarity",
+        "psychological_load_risk",
+        "technical_match",
+        "operational_structure"
+      ],
+      "properties": {
+        "scope_clarity": {
+          "$ref": "#/$defs/evidenceArray"
+        },
+
+        "psychological_load_risk": {
+          "$ref": "#/$defs/evidenceArray"
+        },
+
+        "technical_match": {
+          "$ref": "#/$defs/evidenceArray"
+        },
+
+        "operational_structure": {
+          "$ref": "#/$defs/evidenceArray"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "summary": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 2000
+    },
+
+    "metadata": {
+      "type": "object",
+      "required": ["evaluation_version", "timestamp"],
+      "properties": {
+        "evaluation_version": {
+          "type": "string",
+          "description": "Version of scoring model or prompt set"
+        },
+
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+
+        "model": {
+          "type": ["string", "null"],
+          "description": "LLM used for evaluation"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+
+  "$defs": {
+    "scoreValue": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+
+    "evidenceArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 3
+      },
+      "maxItems": 20
+    }
+  },
+
+  "additionalProperties": false
+}
