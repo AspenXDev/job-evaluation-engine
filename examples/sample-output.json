@@ -1,0 +1,42 @@
+{
+  "job": {
+    "title": "Sales Support Executive",
+    "company": "Example Trading Pte Ltd",
+    "location": "Singapore",
+    "source": "https://example.com/job/123"
+  },
+  "candidate": {
+    "profile_id": "candidate-profile-v1"
+  },
+  "scores": {
+    "scope_clarity": 4,
+    "psychological_load_risk": 3,
+    "technical_match": 4,
+    "operational_structure": 4
+  },
+  "confidence": "HIGH",
+  "evidence": {
+    "scope_clarity": [
+      "Job description lists specific duties including order processing and invoice preparation.",
+      "Reporting line defined to Sales Manager."
+    ],
+    "psychological_load_risk": [
+      "Role supports sales operations rather than owning revenue targets.",
+      "No indication of on-call duties."
+    ],
+    "technical_match": [
+      "Requires Excel and administrative coordination experience.",
+      "Candidate profile includes IT operations coordination and documentation experience."
+    ],
+    "operational_structure": [
+      "Established company with defined internal processes.",
+      "Role positioned within existing sales support team."
+    ]
+  },
+  "summary": "The role demonstrates clear operational scope and structured reporting lines. Technical requirements align well with existing administrative and coordination experience. Psychological load risk appears moderate due to support nature of role and absence of aggressive performance ownership.",
+  "metadata": {
+    "evaluation_version": "1.0.0",
+    "timestamp": "2026-02-28T21:00:00Z",
+    "model": "gpt-5.2"
+  }
+}
