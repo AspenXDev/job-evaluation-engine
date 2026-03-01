@@ -1,0 +1,12 @@
+{
+  "user_id": "user_0001",
+  "career_phase": "stabilization",
+  "weight_profiles": {
+    "risk_tolerance": 0.3,
+    "ambiguity_tolerance": 0.5,
+    "compensation_weight": 0.4,
+    "structure_preference": 0.8,
+    "decision_fatigue_index": 0.6
+  },
+  "interaction_history": []
+}

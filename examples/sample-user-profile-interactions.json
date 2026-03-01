@@ -1,0 +1,64 @@
+{
+  "user_id": "user_0001",
+  "career_phase": "stabilization",
+  "weight_profiles": {
+    "risk_tolerance": 0.32,
+    "ambiguity_tolerance": 0.52,
+    "compensation_weight": 0.4,
+    "structure_preference": 0.78,
+    "decision_fatigue_index": 0.6
+  },
+  "interaction_history": [
+    {
+      "timestamp": "2026-03-01T10:15:00Z",
+      "prompt": "Evaluate this startup product manager role.",
+      "engine_output": {
+        "dimension_scores": {
+          "risk_tolerance": 0.6,
+          "ambiguity_tolerance": 0.7,
+          "compensation_weight": 0.5,
+          "structure_preference": 0.4,
+          "decision_fatigue_index": 0.5
+        },
+        "composite_score": 57.5,
+        "risk_flags": ["high ambiguity", "undefined reporting lines"],
+        "confidence_score": 0.82
+      },
+      "user_feedback": "Seems interesting but a bit chaotic; I’m hesitant."
+    },
+    {
+      "timestamp": "2026-03-01T14:20:00Z",
+      "prompt": "Evaluate a corporate operations executive role.",
+      "engine_output": {
+        "dimension_scores": {
+          "risk_tolerance": 0.2,
+          "ambiguity_tolerance": 0.3,
+          "compensation_weight": 0.4,
+          "structure_preference": 0.9,
+          "decision_fatigue_index": 0.7
+        },
+        "composite_score": 78.3,
+        "risk_flags": ["low challenge", "moderate compensation"],
+        "confidence_score": 0.89
+      },
+      "user_feedback": "Feels safer; aligns with my desire for structure."
+    },
+    {
+      "timestamp": "2026-03-01T18:45:00Z",
+      "prompt": "Re-evaluate startup role after reflecting on risk tolerance.",
+      "engine_output": {
+        "dimension_scores": {
+          "risk_tolerance": 0.58,
+          "ambiguity_tolerance": 0.68,
+          "compensation_weight": 0.5,
+          "structure_preference": 0.42,
+          "decision_fatigue_index": 0.5
+        },
+        "composite_score": 59.0,
+        "risk_flags": ["high ambiguity", "undefined reporting lines"],
+        "confidence_score": 0.84
+      },
+      "user_feedback": "Still risky, but I see potential upside."
+    }
+  ]
+}
