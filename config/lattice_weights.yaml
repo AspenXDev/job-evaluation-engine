@@ -1,0 +1,33 @@
+families:
+  cognitive:
+    weight: 0.30
+    dimensions:
+      reasoning_complexity: 0.40
+      creativity_requirement: 0.30
+      knowledge_breadth: 0.30
+
+  decision_environment:
+    weight: 0.25
+    dimensions:
+      ambiguity_handling: 0.35
+      autonomy_requirement: 0.35
+      planning_horizon: 0.30
+
+  operational:
+    weight: 0.20
+    dimensions:
+      operational_precision: 0.60
+      physical_demands: 0.40
+
+  workload:
+    weight: 0.15
+    dimensions:
+      cognitive_load: 1.0
+
+  social:
+    weight: 0.10
+    dimensions:
+      human_interaction_complexity: 1.0
+
+#Family weights sum = 1.0
+#Dimension weights per family = 1.0

@@ -14,10 +14,21 @@ The Job Evaluation Engine provides:
 - Weighted scoring across defined dimensions
 - Standardized output schema for decision clarity
 - Modular design for future CLI and API integration
+- Job Evaluation
+- Candidate-job matching
+- Automation risk modeling
+- Labor analytics
+- Career path mapping
 
 **Note:** This engine does not search or apply for jobs. It evaluates opportunities based on your profile and interaction history, providing structured clarity for decision-making.
 
 ---
+
+## Existing Adjacent Solutions
+
+simple skill taxonomies
+task lists
+job level classifications
 
 ---
 
