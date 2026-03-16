@@ -1,10 +1,9 @@
 # Job Evaluation Engine
 
-A structured decision engine for evaluating job opportunities through stability, scope clarity, and cognitive sustainability.
+AI-assisted job evaluation engine based on a multidimensional lattice scoring model.
+Built using Spec-Driven Development.
 
-This repository currently represents Phase 2 of a multi-stage evolution toward a generalized structured evaluation engine integrated and callable through the user's LLM of choice.
-
----
+## This repository follows a Spec-Driven Development (SDD) architecture where system behaviour is defined in the /specs directory and implemented in /src.
 
 ## Purpose
 

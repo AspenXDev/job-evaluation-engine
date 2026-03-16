@@ -2,17 +2,18 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.com/schemas/evaluation-output.schema.json",
   "title": "Job Evaluation Output Schema",
-  "description": "Defines the required structured output of the Job Evaluation Engine.",
+  "description": "Structured output produced by the Job Evaluation Engine.",
   "type": "object",
+
   "required": [
     "job",
     "candidate",
-    "scores",
-    "confidence",
-    "evidence",
+    "capability_profile",
+    "evaluation",
     "summary",
     "metadata"
   ],
+
   "properties": {
     "job": {
       "type": "object",
@@ -31,7 +32,7 @@
         },
         "source": {
           "type": ["string", "null"],
-          "description": "URL or recruiter source"
+          "description": "Source of job listing"
         }
       },
       "additionalProperties": false
@@ -43,68 +44,60 @@
       "properties": {
         "profile_id": {
           "type": "string",
-          "description": "Identifier for candidate profile used"
+          "description": "Identifier for candidate profile"
         }
       },
       "additionalProperties": false
     },
 
-    "scores": {
+    "capability_profile": {
       "type": "object",
+      "description": "Multidimensional capability vector produced by the lattice model",
       "required": [
-        "scope_clarity",
-        "psychological_load_risk",
-        "technical_match",
-        "operational_structure"
+        "reasoning",
+        "planning",
+        "creativity",
+        "operational_complexity",
+        "coordination"
       ],
       "properties": {
-        "scope_clarity": {
-          "$ref": "#/$defs/scoreValue"
-        },
-
-        "psychological_load_risk": {
-          "$ref": "#/$defs/scoreValue"
-        },
-
-        "technical_match": {
-          "$ref": "#/$defs/scoreValue"
-        },
-
-        "operational_structure": {
-          "$ref": "#/$defs/scoreValue"
-        }
+        "reasoning": { "$ref": "#/$defs/scoreValue" },
+        "planning": { "$ref": "#/$defs/scoreValue" },
+        "creativity": { "$ref": "#/$defs/scoreValue" },
+        "operational_complexity": { "$ref": "#/$defs/scoreValue" },
+        "coordination": { "$ref": "#/$defs/scoreValue" }
       },
       "additionalProperties": false
     },
 
-    "confidence": {
-      "type": "string",
-      "enum": ["LOW", "MEDIUM", "HIGH"]
-    },
-
-    "evidence": {
+    "evaluation": {
       "type": "object",
-      "required": [
-        "scope_clarity",
-        "psychological_load_risk",
-        "technical_match",
-        "operational_structure"
-      ],
+      "description": "Evaluation metrics derived from the capability profile",
+      "required": ["alignment_score", "gap_analysis"],
       "properties": {
-        "scope_clarity": {
-          "$ref": "#/$defs/evidenceArray"
+        "alignment_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overall candidate-role alignment score"
         },
 
-        "psychological_load_risk": {
-          "$ref": "#/$defs/evidenceArray"
+        "gap_analysis": {
+          "type": "object",
+          "description": "Differences between candidate and role capability vectors",
+          "properties": {
+            "reasoning": { "$ref": "#/$defs/gapValue" },
+            "planning": { "$ref": "#/$defs/gapValue" },
+            "creativity": { "$ref": "#/$defs/gapValue" },
+            "operational_complexity": { "$ref": "#/$defs/gapValue" },
+            "coordination": { "$ref": "#/$defs/gapValue" }
+          },
+          "additionalProperties": false
         },
 
-        "technical_match": {
-          "$ref": "#/$defs/evidenceArray"
-        },
-
-        "operational_structure": {
-          "$ref": "#/$defs/evidenceArray"
+        "confidence": {
+          "type": "string",
+          "enum": ["LOW", "MEDIUM", "HIGH"]
         }
       },
       "additionalProperties": false
@@ -122,7 +115,7 @@
       "properties": {
         "evaluation_version": {
           "type": "string",
-          "description": "Version of scoring model or prompt set"
+          "description": "Version of scoring model"
         },
 
         "timestamp": {
@@ -133,6 +126,11 @@
         "model": {
           "type": ["string", "null"],
           "description": "LLM used for evaluation"
+        },
+
+        "config_profile": {
+          "type": ["string", "null"],
+          "description": "Configuration profile used"
         }
       },
       "additionalProperties": false
@@ -141,18 +139,15 @@
 
   "$defs": {
     "scoreValue": {
-      "type": "integer",
+      "type": "number",
       "minimum": 0,
-      "maximum": 5
+      "maximum": 1
     },
 
-    "evidenceArray": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "minLength": 3
-      },
-      "maxItems": 20
+    "gapValue": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
     }
   },
 

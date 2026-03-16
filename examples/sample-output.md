@@ -2,7 +2,7 @@
 
 This file demonstrates a human-readable version of an evaluation produced by the Job Evaluation Engine.
 
-The structured JSON equivalent is located at:
+Structured JSON source:
 
 examples/sample-output.json
 
@@ -14,6 +14,8 @@ Title: Sales Support Executive
 Company: Example Trading Pte Ltd  
 Location: Singapore
 
+Source: https://example.com/job/123
+
 ---
 
 ## Candidate Profile
@@ -24,12 +26,12 @@ Profile ID: candidate-profile-v1
 
 ## Scores (0–5)
 
-| Dimension               | Score | Interpretation                        |
-| ----------------------- | ----- | ------------------------------------- |
-| Scope Clarity           | 4     | Responsibilities clearly defined      |
-| Psychological Load Risk | 3     | Moderate operational load             |
-| Technical Match         | 4     | Strong alignment with existing skills |
-| Operational Structure   | 4     | Structured environment                |
+| Dimension               | Score | Interpretation |
+| ----------------------- | ----- | -------------- |
+| Scope Clarity           | 4     | Strong fit     |
+| Psychological Load Risk | 3     | Acceptable fit |
+| Technical Match         | 4     | Strong fit     |
+| Operational Structure   | 4     | Strong fit     |
 
 ---
 
@@ -37,34 +39,32 @@ Profile ID: candidate-profile-v1
 
 HIGH
 
-Reason: Job description contains explicit responsibilities, reporting lines, and requirements.
-
 ---
 
 ## Evidence
 
 ### Scope Clarity
 
-- Order processing responsibilities explicitly listed
-- Reporting line defined
+- Job description lists specific duties including order processing and invoice preparation.
+- Reporting line defined to Sales Manager.
 
 ### Psychological Load Risk
 
-- Support function role
-- No escalation ownership indicated
+- Role supports sales operations rather than owning revenue targets.
+- No indication of on-call duties.
 
 ### Technical Match
 
-- Administrative coordination required
-- Candidate has operational coordination experience
+- Requires Excel and administrative coordination experience.
+- Candidate profile includes IT operations coordination and documentation experience.
 
 ### Operational Structure
 
-- Established company
-- Defined team structure
+- Established company with defined internal processes.
+- Role positioned within existing sales support team.
 
 ---
 
 ## Summary
 
-This role presents a well-defined operational support position with strong structural clarity and good alignment with existing skills. Psychological load risk appears moderate and manageable.
+The role demonstrates clear operational scope and structured reporting lines. Technical requirements align well with existing administrative and coordination experience. Psychological load risk appears moderate due to support nature of role and absence of aggressive performance ownership.

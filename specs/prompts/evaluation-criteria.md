@@ -1,3 +1,5 @@
+specs/
+
 # Evaluation Criteria
 
 Each job must be evaluated across the following dimensions.

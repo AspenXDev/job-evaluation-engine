@@ -1,0 +1,11 @@
+{
+  "profile_id": "candidate-v1",
+  "capability_profile": {
+    "reasoning": 0.6,
+    "planning": 0.7,
+    "creativity": 0.4,
+    "operational_complexity": 0.6,
+    "coordination": 0.7
+  },
+  "raw_text": "Experienced operations leader with a track record of managing cross-functional programs, driving strategic planning, and coordinating stakeholders across engineering, product, and customer success."
+}

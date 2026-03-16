@@ -3,8 +3,8 @@ engine.
 
 Two primary output types exist:
 
-benchmark_results
+/specs/outputs/benchmark_results
 Raw results from benchmark runs.
 
-reports
+/specs/outputs/reports
 Human-readable evaluation reports.
